@@ -1,0 +1,35 @@
+name: naver-trend-watch
+
+on:
+  schedule:
+    - cron: "0 21 * * 0"      # 일요일 21:00 UTC = 월요일 06:00 KST
+  workflow_dispatch:           # 버튼으로 즉시 실행도 가능
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 데이터랩 조회
+        env:
+          NCP_API_KEY_ID: ${{ secrets.NCP_API_KEY_ID }}
+          NCP_API_KEY: ${{ secrets.NCP_API_KEY }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}     # 없어도 됨
+          TG_CHAT: ${{ secrets.TG_CHAT }}       # 없어도 됨
+        run: python naver_trend_watch.py
+
+      - name: 결과 커밋
+        run: |
+          git config user.name "trend-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add result.json brief.md
+          git diff --staged --quiet || git commit -m "trend: $(date +%F)"
+          git push
