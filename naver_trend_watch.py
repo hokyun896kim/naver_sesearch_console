@@ -1,38 +1,43 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-네이버 데이터랩 검색어트렌드 자동 감시
-- keywords.json 의 그룹을 '한 번에 하나씩' 조회한다 (그룹마다 0~100 스케일을 독점해야
-  작은 키워드가 큰 키워드에 눌려 바닥에 깔리는 문제가 안 생긴다)
-- 각 그룹에 대해 모멘텀(최근 4주 vs 직전 4주), 전년 동기 대비, 계절 봉우리 시점을 계산
-- result.json (기계용) + brief.md (사람용) 생성
+네이버 데이터랩 검색어트렌드 자동 감시 (v2)
+
+v1 대비 변경점
+1) 봉우리를 월별로 집계해 '연 2~3회 봉우리'까지 잡는다 (재산세 7·9월, 자동차세 1·6·12월)
+2) history.jsonl 에 매 실행 결과를 누적 → 다음 주부터 '지난주 대비' 산출 가능
+3) keywords.json 의 "lunar": true 그룹은 봉우리 날짜·전년비를 신뢰하지 않는다고 명시
+4) peak_pct(자기 2년 최고치 대비 현재 위치) 추가 → 계절 봉우리가 없는 상시 키워드도 포착
+
+주의: 그룹마다 API를 따로 호출하므로 ratio 는 '그룹 내부 0~100'이다.
+      그룹 간 ratio 크기 비교는 성립하지 않는다. (brief.md 상단에도 명시)
 """
 
 import json, os, time, datetime as dt
+from collections import defaultdict
 from urllib import request as urlreq
 from urllib.error import HTTPError
 
-# 2026-07-31 개발자센터 신규 신청 종료 → NAVER API HUB(네이버클라우드) 방식
 API = "https://naverapihub.apigw.ntruss.com/search-trend/v1/search"
-KEY_ID = os.environ["NCP_API_KEY_ID"]      # X-NCP-APIGW-API-KEY-ID
-KEY = os.environ["NCP_API_KEY"]            # X-NCP-APIGW-API-KEY
+KEY_ID = os.environ["NCP_API_KEY_ID"]
+KEY = os.environ["NCP_API_KEY"]
 
-# 40~59세 = ages 코드 7,8,9,10 (1=0~12 … 7=40~44, 8=45~49, 9=50~54, 10=55~59, 11=60~)
-AGES = ["7", "8", "9", "10"]
-DEVICE = "mo"          # 모바일 검색 기준
-YEARS = 2              # 계절성 보려면 최소 2년
-LEAD_DAYS = 5          # 봉우리 며칠 전에 발행할지 (선점 발행 룰)
+AGES = ["7", "8", "9", "10"]      # 40~44, 45~49, 50~54, 55~59
+DEVICE = "mo"
+YEARS = 2
+LEAD_DAYS = 5                     # 봉우리 며칠 전에 발행할지
+PEAK_FLOOR = 0.45                 # 최대 봉우리의 45% 이상인 달만 '유효 봉우리'
 
 
 def call(group):
-    """검색어 그룹 하나를 주간 단위로 조회"""
     end = dt.date.today() - dt.timedelta(days=1)
     start = end - dt.timedelta(days=365 * YEARS)
     body = {
         "startDate": start.isoformat(),
         "endDate": end.isoformat(),
         "timeUnit": "week",
-        "keywordGroups": [group],
+        # lunar 같은 우리쪽 메타키는 빼고 API 규격만 보낸다
+        "keywordGroups": [{"groupName": group["groupName"], "keywords": group["keywords"]}],
         "device": DEVICE,
         "ages": AGES,
     }
@@ -45,7 +50,6 @@ def call(group):
             "Content-Type": "application/json",
         },
     )
-    # 429(한도 초과)는 백오프 후 재시도
     for attempt in range(3):
         try:
             with urlreq.urlopen(req, timeout=20) as r:
@@ -61,88 +65,151 @@ def avg(rows):
     return round(sum(r["ratio"] for r in rows) / len(rows), 1) if rows else 0.0
 
 
-def analyze(name, data):
-    """data: [{'period':'2026-08-10','ratio':12.3}, ...] 주간 오름차순"""
+def find_peaks(data):
+    """월별 평균으로 후보 달을 고르고, 각 달에서 실제 최고 주의 날짜를 뽑는다"""
+    by_month = defaultdict(list)
+    for r in data:
+        by_month[dt.date.fromisoformat(r["period"]).month].append(r)
+
+    month_avg = {m: avg(rows) for m, rows in by_month.items()}
+    top = max(month_avg.values()) or 1
+
+    peaks = []
+    for m in sorted(month_avg, key=month_avg.get, reverse=True)[:4]:
+        if month_avg[m] < top * PEAK_FLOOR:
+            continue
+        best = max(by_month[m], key=lambda r: r["ratio"])
+        peaks.append({
+            "mmdd": dt.date.fromisoformat(best["period"]).strftime("%m-%d"),
+            "month_avg": month_avg[m],
+            "share": round(month_avg[m] / top, 2),   # 1.0 = 최대 봉우리
+        })
+    return sorted(peaks, key=lambda p: p["mmdd"])
+
+
+def next_date(mmdd, today):
+    mm, dd = int(mmdd[:2]), int(mmdd[3:])
+    try:
+        d = dt.date(today.year, mm, dd)
+    except ValueError:
+        d = dt.date(today.year, mm, 28)
+    return d if d >= today else d.replace(year=today.year + 1)
+
+
+def analyze(g, data, today):
     if len(data) < 60:
         return None
 
-    recent4, prev4 = data[-4:], data[-8:-4]
-    # 전년 동기: 52주 전 기준 앞뒤 4주
-    yoy4 = data[-56:-52]
+    m_now, m_prev = avg(data[-4:]), avg(data[-8:-4])
+    m_yoy = avg(data[-56:-52])
+    all_max = max(r["ratio"] for r in data) or 1
 
-    m_now, m_prev, m_yoy = avg(recent4), avg(prev4), avg(yoy4)
-    momentum = round(m_now / m_prev, 2) if m_prev else None
-    yoy = round(m_now / m_yoy, 2) if m_yoy else None
+    peaks = find_peaks(data)
+    lunar = bool(g.get("lunar"))
 
-    # 계절 봉우리: 전체 구간 최고점의 '월-일'
-    peak = max(data, key=lambda r: r["ratio"])
-    pd = dt.date.fromisoformat(peak["period"])
-
-    # 올해 기준 다음 봉우리까지 남은 날
-    today = dt.date.today()
-    try:
-        this_year = pd.replace(year=today.year)
-    except ValueError:                      # 2/29 방어
-        this_year = pd.replace(year=today.year, day=28)
-    nxt = this_year if this_year >= today else this_year.replace(year=today.year + 1)
-    d_to_peak = (nxt - today).days
-    publish_on = nxt - dt.timedelta(days=LEAD_DAYS)
+    # 가장 가까운 봉우리 기준으로 발행일 산출 (음력 그룹은 산출하지 않음)
+    schedule = []
+    for p in peaks:
+        nd = next_date(p["mmdd"], today)
+        schedule.append({
+            "peak_mmdd": p["mmdd"],
+            "share": p["share"],
+            "days_to_peak": (nd - today).days,
+            "publish_on": (nd - dt.timedelta(days=LEAD_DAYS)).isoformat(),
+        })
+    schedule.sort(key=lambda s: s["days_to_peak"])
 
     return {
-        "group": name,
+        "group": g["groupName"],
+        "lunar": lunar,
         "recent4": m_now,
         "prev4": m_prev,
-        "momentum": momentum,          # 1.0 초과 = 지금 올라오는 중
-        "yoy": yoy,                    # 1.0 초과 = 작년보다 커진 시장
-        "peak_mmdd": pd.strftime("%m-%d"),
-        "days_to_peak": d_to_peak,
-        "publish_on": publish_on.isoformat(),
+        "momentum": round(m_now / m_prev, 2) if m_prev else None,
+        "yoy": None if lunar else (round(m_now / m_yoy, 2) if m_yoy else None),
+        "peak_pct": round(m_now / all_max * 100),      # 자기 2년 최고치 대비 현재 위치(%)
+        "peaks": schedule,
+        "next": schedule[0] if schedule else None,
     }
 
 
+def load_prev():
+    if not os.path.exists("history.jsonl"):
+        return {}
+    lines = [l for l in open("history.jsonl", encoding="utf-8").read().splitlines() if l.strip()]
+    if not lines:
+        return {}
+    last = json.loads(lines[-1])
+    return {i["group"]: i for i in last.get("items", [])}
+
+
 def main():
-    groups = json.load(open("keywords.json", encoding="utf-8"))["groups"]
+    cfg = json.load(open("keywords.json", encoding="utf-8"))
+    today = dt.date.today()
     out, failed = [], []
 
-    for g in groups:
+    for g in cfg["groups"]:
         try:
-            res = analyze(g["groupName"], call(g))
+            res = analyze(g, call(g), today)
             if res:
                 out.append(res)
         except HTTPError as e:
-            # HUB는 오류를 {"error":{...}} 형태로도 준다
             try:
-                detail = json.loads(e.read().decode("utf-8"))
+                d = json.loads(e.read().decode("utf-8"))
             except Exception:
-                detail = {}
-            msg = (detail.get("error") or {}).get("message") or detail.get("errorMessage") or ""
+                d = {}
+            msg = (d.get("error") or {}).get("message") or d.get("errorMessage") or ""
             failed.append(f"{g['groupName']}: HTTP {e.code} {msg}")
         except Exception as e:
             failed.append(f"{g['groupName']}: {e}")
-        time.sleep(0.3)                # 호출 간격 확보
+        time.sleep(0.3)
 
-    # 임박한 봉우리 순으로 정렬
-    out.sort(key=lambda x: x["days_to_peak"])
+    prev = load_prev()
+    for x in out:                                   # 지난 실행 대비 변화
+        p = prev.get(x["group"])
+        x["d_momentum"] = round(x["momentum"] - p["momentum"], 2) if p and p.get("momentum") and x["momentum"] else None
+        x["d_peak_pct"] = x["peak_pct"] - p["peak_pct"] if p and p.get("peak_pct") is not None else None
+
+    out.sort(key=lambda x: x["next"]["days_to_peak"] if x["next"] else 999)
     stamp = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
+    payload = {"updated": stamp, "device": DEVICE, "ages": "40~59",
+               "items": out, "failed": failed}
 
-    json.dump(
-        {"updated": stamp, "device": DEVICE, "ages": "40~59", "items": out, "failed": failed},
-        open("result.json", "w", encoding="utf-8"),
-        ensure_ascii=False, indent=2,
-    )
+    json.dump(payload, open("result.json", "w", encoding="utf-8"),
+              ensure_ascii=False, indent=2)
+    with open("history.jsonl", "a", encoding="utf-8") as f:
+        f.write(json.dumps(payload, ensure_ascii=False) + "\n")
 
-    # 사람이 읽는 요약
+    # ---------- 사람이 읽는 요약 ----------
+    L = [f"# 검색 수요 감시 ({stamp} / 모바일·40~59세)", "",
+         "> **해석 규칙** ①ratio는 그룹마다 따로 조회한 값이라 **그룹 간 크기 비교는 성립하지 않는다.** "
+         "②검색 건수가 아니라 자기 구간 최대치를 100으로 둔 지수다. "
+         "③lunar 표시된 그룹은 봉우리 날짜와 전년비를 신뢰하지 말고 실제 명절 날짜에서 역산할 것.", ""]
+
+    due = [x for x in out if x["next"] and 0 <= x["next"]["days_to_peak"] <= 14 and not x["lunar"]]
+    L += ["## 2주 안에 발행할 것"]
+    L += [f"- **{x['group']}** — {x['next']['days_to_peak']}일 뒤 정점({x['next']['peak_mmdd']}), "
+          f"**{x['next']['publish_on']} 발행** / 현재 {x['peak_pct']}% 수준" for x in due] or ["- 없음"]
+
     hot = [x for x in out if x["momentum"] and x["momentum"] >= 1.3]
-    soon = [x for x in out if 0 <= x["days_to_peak"] <= 21]
+    L += ["", "## 지금 올라오는 중 (최근 4주 ÷ 직전 4주 ≥ 1.3)"]
+    L += [f"- **{x['group']}** ×{x['momentum']}"
+          + (f" (지난주 대비 {x['d_momentum']:+})" if x["d_momentum"] is not None else "")
+          + (f" / 전년비 {x['yoy']}" if x["yoy"] else " / 전년비 참고불가(lunar)")
+          for x in hot] or ["- 없음"]
 
-    L = [f"# 검색 수요 감시 ({stamp} / 모바일·40~59세)", ""]
-    L.append("## 지금 올라오는 중 (최근 4주 ÷ 직전 4주 ≥ 1.3)")
-    L += [f"- **{x['group']}** ×{x['momentum']} (전년비 {x['yoy']})" for x in hot] or ["- 없음"]
-    L += ["", "## 3주 안에 봉우리 (발행 예정일)"]
-    L += [f"- **{x['group']}** — {x['days_to_peak']}일 뒤 정점, **{x['publish_on']} 발행**"
-          for x in soon] or ["- 없음"]
-    L += ["", "## 전체 캘린더 (봉우리 순)"]
-    L += [f"- {x['group']}: 매년 {x['peak_mmdd']} 전후 / 다음 발행 {x['publish_on']}" for x in out]
+    high = [x for x in out if x["peak_pct"] >= 70]
+    L += ["", "## 자기 최고치 근접 (계절 봉우리와 무관한 상시 수요)"]
+    L += [f"- **{x['group']}** — 2년 최고치의 {x['peak_pct']}% 지점"
+          + (f" ({x['d_peak_pct']:+}%p)" if x["d_peak_pct"] is not None else "")
+          for x in sorted(high, key=lambda z: -z["peak_pct"])] or ["- 없음"]
+
+    L += ["", "## 전체 캘린더 (봉우리 전부)"]
+    for x in out:
+        tag = " ⚠️lunar" if x["lunar"] else ""
+        ps = " · ".join(f"{p['peak_mmdd']}({p['share']})" for p in x["peaks"]) or "봉우리 없음"
+        L.append(f"- **{x['group']}**{tag} — {ps}"
+                 + (f" / 다음 발행 {x['next']['publish_on']}" if x["next"] and not x["lunar"] else ""))
+
     if failed:
         L += ["", "## 조회 실패", *[f"- {f}" for f in failed]]
 
@@ -150,16 +217,12 @@ def main():
     open("brief.md", "w", encoding="utf-8").write(brief)
     print(brief)
 
-    # 텔레그램은 설정돼 있을 때만
     tok, chat = os.environ.get("TG_TOKEN"), os.environ.get("TG_CHAT")
     if tok and chat:
-        msg = "[검색수요 감시] " + brief[:3500]
-        urlreq.urlopen(
-            urlreq.Request(
-                f"https://api.telegram.org/bot{tok}/sendMessage",
-                data=json.dumps({"chat_id": chat, "text": msg}).encode("utf-8"),
-                headers={"Content-Type": "application/json"},
-            ), timeout=15)
+        urlreq.urlopen(urlreq.Request(
+            f"https://api.telegram.org/bot{tok}/sendMessage",
+            data=json.dumps({"chat_id": chat, "text": "[검색수요 감시] " + brief[:3500]}).encode("utf-8"),
+            headers={"Content-Type": "application/json"}), timeout=15)
 
 
 if __name__ == "__main__":
