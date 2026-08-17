@@ -1,0 +1,158 @@
+{
+  "updated": "2026-08-17 10:13",
+  "device": "mo",
+  "ages": "40~59",
+  "items": [
+    {
+      "group": "청년·근로장려금",
+      "recent4": 11.8,
+      "prev4": 12.5,
+      "momentum": 0.94,
+      "yoy": 0.6,
+      "peak_mmdd": "08-25",
+      "days_to_peak": 8,
+      "publish_on": "2026-08-20"
+    },
+    {
+      "group": "추석 용돈·상여",
+      "recent4": 1.6,
+      "prev4": 0.8,
+      "momentum": 2.0,
+      "yoy": 0.67,
+      "peak_mmdd": "09-09",
+      "days_to_peak": 23,
+      "publish_on": "2026-09-04"
+    },
+    {
+      "group": "종합소득세 중간예납",
+      "recent4": 0.4,
+      "prev4": 0.5,
+      "momentum": 0.8,
+      "yoy": 0.8,
+      "peak_mmdd": "11-04",
+      "days_to_peak": 79,
+      "publish_on": "2026-10-30"
+    },
+    {
+      "group": "국민연금",
+      "recent4": 47.0,
+      "prev4": 44.1,
+      "momentum": 1.07,
+      "yoy": 1.1,
+      "peak_mmdd": "11-24",
+      "days_to_peak": 99,
+      "publish_on": "2026-11-19"
+    },
+    {
+      "group": "기초연금",
+      "recent4": 24.3,
+      "prev4": 21.9,
+      "momentum": 1.11,
+      "yoy": 0.78,
+      "peak_mmdd": "12-30",
+      "days_to_peak": 135,
+      "publish_on": "2026-12-25"
+    },
+    {
+      "group": "퇴직금·퇴직연금",
+      "recent4": 49.9,
+      "prev4": 55.2,
+      "momentum": 0.9,
+      "yoy": 0.8,
+      "peak_mmdd": "12-30",
+      "days_to_peak": 135,
+      "publish_on": "2026-12-25"
+    },
+    {
+      "group": "자동차세",
+      "recent4": 1.2,
+      "prev4": 7.5,
+      "momentum": 0.16,
+      "yoy": 0.52,
+      "peak_mmdd": "01-13",
+      "days_to_peak": 149,
+      "publish_on": "2027-01-08"
+    },
+    {
+      "group": "연금저축",
+      "recent4": 19.0,
+      "prev4": 25.3,
+      "momentum": 0.75,
+      "yoy": 0.68,
+      "peak_mmdd": "01-19",
+      "days_to_peak": 155,
+      "publish_on": "2027-01-14"
+    },
+    {
+      "group": "주택연금",
+      "recent4": 44.4,
+      "prev4": 48.1,
+      "momentum": 0.92,
+      "yoy": 0.89,
+      "peak_mmdd": "02-09",
+      "days_to_peak": 176,
+      "publish_on": "2027-02-04"
+    },
+    {
+      "group": "연말정산 미리보기",
+      "recent4": 0.4,
+      "prev4": 0.4,
+      "momentum": 1.0,
+      "yoy": 0.44,
+      "peak_mmdd": "02-17",
+      "days_to_peak": 184,
+      "publish_on": "2027-02-12"
+    },
+    {
+      "group": "실업급여",
+      "recent4": 43.0,
+      "prev4": 44.2,
+      "momentum": 0.97,
+      "yoy": 0.7,
+      "peak_mmdd": "03-03",
+      "days_to_peak": 198,
+      "publish_on": "2027-02-26"
+    },
+    {
+      "group": "종합소득세",
+      "recent4": 2.5,
+      "prev4": 3.3,
+      "momentum": 0.76,
+      "yoy": 0.69,
+      "peak_mmdd": "04-28",
+      "days_to_peak": 254,
+      "publish_on": "2027-04-23"
+    },
+    {
+      "group": "건강보험료",
+      "recent4": 17.0,
+      "prev4": 8.9,
+      "momentum": 1.91,
+      "yoy": 0.52,
+      "peak_mmdd": "05-18",
+      "days_to_peak": 274,
+      "publish_on": "2027-05-13"
+    },
+    {
+      "group": "재산세·종부세",
+      "recent4": 47.0,
+      "prev4": 29.0,
+      "momentum": 1.62,
+      "yoy": 1.13,
+      "peak_mmdd": "07-14",
+      "days_to_peak": 331,
+      "publish_on": "2027-07-09"
+    },
+    {
+      "group": "정기예금 금리",
+      "recent4": 85.2,
+      "prev4": 77.5,
+      "momentum": 1.1,
+      "yoy": 1.63,
+      "peak_mmdd": "07-20",
+      "days_to_peak": 337,
+      "publish_on": "2027-07-15"
+    }
+  ],
+  "failed": []
+}
