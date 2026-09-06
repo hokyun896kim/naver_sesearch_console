@@ -1,297 +1,217 @@
 {
-  "updated": "2026-08-30 23:18",
+  "updated": "2026-09-06 22:47",
   "device": "mo",
   "ages": "40~59",
   "items": [
     {
-      "group": "건강보험료 정산",
-      "lunar": false,
-      "recent4": 4.6,
-      "prev4": 5.8,
-      "momentum": 0.79,
-      "yoy": 0.18,
-      "peak_pct": 5,
-      "peaks": [
-        {
-          "peak_mmdd": "09-01",
-          "share": 0.5,
-          "days_to_peak": 2,
-          "publish_on": "2026-08-27"
-        },
-        {
-          "peak_mmdd": "04-14",
-          "share": 1.0,
-          "days_to_peak": 227,
-          "publish_on": "2027-04-09"
-        },
-        {
-          "peak_mmdd": "05-12",
-          "share": 0.84,
-          "days_to_peak": 255,
-          "publish_on": "2027-05-07"
-        }
-      ],
-      "next": {
-        "peak_mmdd": "09-01",
-        "share": 0.5,
-        "days_to_peak": 2,
-        "publish_on": "2026-08-27"
-      },
-      "d_momentum": -0.09,
-      "d_peak_pct": 0
-    },
-    {
-      "group": "국민연금 인상·개편",
-      "lunar": false,
-      "recent4": 6.0,
-      "prev4": 8.2,
-      "momentum": 0.73,
-      "yoy": 0.34,
-      "peak_pct": 6,
-      "peaks": [
-        {
-          "peak_mmdd": "09-02",
-          "share": 0.56,
-          "days_to_peak": 3,
-          "publish_on": "2026-08-28"
-        },
-        {
-          "peak_mmdd": "01-26",
-          "share": 1.0,
-          "days_to_peak": 149,
-          "publish_on": "2027-01-21"
-        },
-        {
-          "peak_mmdd": "02-02",
-          "share": 0.8,
-          "days_to_peak": 156,
-          "publish_on": "2027-01-28"
-        },
-        {
-          "peak_mmdd": "03-17",
-          "share": 0.82,
-          "days_to_peak": 199,
-          "publish_on": "2027-03-12"
-        }
-      ],
-      "next": {
-        "peak_mmdd": "09-02",
-        "share": 0.56,
-        "days_to_peak": 3,
-        "publish_on": "2026-08-28"
-      },
-      "d_momentum": -0.16,
-      "d_peak_pct": -1
-    },
-    {
       "group": "추석 명절비",
       "lunar": true,
-      "recent4": 2.4,
-      "prev4": 0.9,
-      "momentum": 2.67,
+      "recent4": 3.4,
+      "prev4": 1.0,
+      "momentum": 3.4,
       "yoy": null,
-      "peak_pct": 2,
+      "peak_pct": 3,
       "peaks": [
         {
           "peak_mmdd": "09-09",
           "share": 1.0,
-          "days_to_peak": 10,
+          "days_to_peak": 3,
           "publish_on": "2026-09-04"
         }
       ],
       "next": {
         "peak_mmdd": "09-09",
         "share": 1.0,
-        "days_to_peak": 10,
+        "days_to_peak": 3,
         "publish_on": "2026-09-04"
       },
-      "d_momentum": 0.17,
-      "d_peak_pct": 0
+      "d_momentum": 0.73,
+      "d_peak_pct": 1
     },
     {
       "group": "재산세",
       "lunar": false,
-      "recent4": 7.5,
-      "prev4": 61.2,
+      "recent4": 6.6,
+      "prev4": 56.3,
       "momentum": 0.12,
-      "yoy": 0.88,
-      "peak_pct": 8,
+      "yoy": 0.79,
+      "peak_pct": 7,
       "peaks": [
         {
           "peak_mmdd": "09-29",
           "share": 0.59,
-          "days_to_peak": 30,
+          "days_to_peak": 23,
           "publish_on": "2026-09-24"
         },
         {
           "peak_mmdd": "07-14",
           "share": 1.0,
-          "days_to_peak": 318,
+          "days_to_peak": 311,
           "publish_on": "2027-07-09"
         }
       ],
       "next": {
         "peak_mmdd": "09-29",
         "share": 0.59,
-        "days_to_peak": 30,
+        "days_to_peak": 23,
         "publish_on": "2026-09-24"
       },
-      "d_momentum": -0.36,
-      "d_peak_pct": -15
+      "d_momentum": 0.0,
+      "d_peak_pct": -1
     },
     {
       "group": "경조사비",
       "lunar": false,
-      "recent4": 23.5,
-      "prev4": 16.1,
-      "momentum": 1.46,
-      "yoy": 0.6,
-      "peak_pct": 24,
+      "recent4": 28.5,
+      "prev4": 15.2,
+      "momentum": 1.88,
+      "yoy": 0.62,
+      "peak_pct": 28,
       "peaks": [
         {
           "peak_mmdd": "09-30",
           "share": 0.83,
-          "days_to_peak": 31,
+          "days_to_peak": 24,
           "publish_on": "2026-09-25"
         },
         {
           "peak_mmdd": "10-07",
           "share": 1.0,
-          "days_to_peak": 38,
+          "days_to_peak": 31,
           "publish_on": "2026-10-02"
         },
         {
           "peak_mmdd": "11-04",
           "share": 0.93,
-          "days_to_peak": 66,
+          "days_to_peak": 59,
           "publish_on": "2026-10-30"
         },
         {
           "peak_mmdd": "03-03",
           "share": 0.67,
-          "days_to_peak": 185,
+          "days_to_peak": 178,
           "publish_on": "2027-02-26"
         }
       ],
       "next": {
         "peak_mmdd": "09-30",
         "share": 0.83,
-        "days_to_peak": 31,
+        "days_to_peak": 24,
         "publish_on": "2026-09-25"
       },
-      "d_momentum": 0.58,
-      "d_peak_pct": 8
+      "d_momentum": 0.42,
+      "d_peak_pct": 4
     },
     {
       "group": "주택연금",
       "lunar": false,
-      "recent4": 40.5,
-      "prev4": 45.6,
+      "recent4": 39.2,
+      "prev4": 44.0,
       "momentum": 0.89,
-      "yoy": 0.78,
-      "peak_pct": 40,
+      "yoy": 0.72,
+      "peak_pct": 39,
       "peaks": [
         {
           "peak_mmdd": "10-06",
           "share": 0.66,
-          "days_to_peak": 37,
+          "days_to_peak": 30,
           "publish_on": "2026-10-01"
         },
         {
           "peak_mmdd": "01-27",
           "share": 0.71,
-          "days_to_peak": 150,
+          "days_to_peak": 143,
           "publish_on": "2027-01-22"
         },
         {
           "peak_mmdd": "02-09",
           "share": 1.0,
-          "days_to_peak": 163,
+          "days_to_peak": 156,
           "publish_on": "2027-02-04"
         },
         {
           "peak_mmdd": "03-10",
           "share": 0.72,
-          "days_to_peak": 192,
+          "days_to_peak": 185,
           "publish_on": "2027-03-05"
         }
       ],
       "next": {
         "peak_mmdd": "10-06",
         "share": 0.66,
-        "days_to_peak": 37,
+        "days_to_peak": 30,
         "publish_on": "2026-10-01"
       },
-      "d_momentum": 0.05,
+      "d_momentum": 0.0,
       "d_peak_pct": -1
     },
     {
       "group": "종합소득세 중간예납",
       "lunar": false,
       "recent4": 0.6,
-      "prev4": 0.3,
-      "momentum": 2.0,
+      "prev4": 0.4,
+      "momentum": 1.5,
       "yoy": 0.86,
       "peak_pct": 1,
       "peaks": [
         {
           "peak_mmdd": "11-04",
           "share": 1.0,
-          "days_to_peak": 66,
+          "days_to_peak": 59,
           "publish_on": "2026-10-30"
         }
       ],
       "next": {
         "peak_mmdd": "11-04",
         "share": 1.0,
-        "days_to_peak": 66,
+        "days_to_peak": 59,
         "publish_on": "2026-10-30"
       },
-      "d_momentum": 0.67,
-      "d_peak_pct": 1
+      "d_momentum": -0.5,
+      "d_peak_pct": 0
     },
     {
       "group": "IRP·퇴직연금",
       "lunar": false,
-      "recent4": 21.3,
-      "prev4": 20.9,
-      "momentum": 1.02,
-      "yoy": 0.56,
-      "peak_pct": 21,
+      "recent4": 19.8,
+      "prev4": 21.6,
+      "momentum": 0.92,
+      "yoy": 0.51,
+      "peak_pct": 20,
       "peaks": [
         {
           "peak_mmdd": "11-10",
           "share": 0.81,
-          "days_to_peak": 72,
+          "days_to_peak": 65,
           "publish_on": "2026-11-05"
         },
         {
           "peak_mmdd": "12-22",
           "share": 1.0,
-          "days_to_peak": 114,
+          "days_to_peak": 107,
           "publish_on": "2026-12-17"
         },
         {
           "peak_mmdd": "01-19",
           "share": 0.96,
-          "days_to_peak": 142,
+          "days_to_peak": 135,
           "publish_on": "2027-01-14"
         },
         {
           "peak_mmdd": "02-03",
           "share": 0.87,
-          "days_to_peak": 157,
+          "days_to_peak": 150,
           "publish_on": "2027-01-29"
         }
       ],
       "next": {
         "peak_mmdd": "11-10",
         "share": 0.81,
-        "days_to_peak": 72,
+        "days_to_peak": 65,
         "publish_on": "2026-11-05"
       },
-      "d_momentum": 0.07,
-      "d_peak_pct": 0
+      "d_momentum": -0.1,
+      "d_peak_pct": -1
     },
     {
       "group": "연말정산 미리보기",
@@ -299,407 +219,407 @@
       "recent4": 0.1,
       "prev4": 0.1,
       "momentum": 1.0,
-      "yoy": 1.0,
+      "yoy": 0.5,
       "peak_pct": 0,
       "peaks": [
         {
           "peak_mmdd": "11-11",
           "share": 0.91,
-          "days_to_peak": 73,
+          "days_to_peak": 66,
           "publish_on": "2026-11-06"
         },
         {
           "peak_mmdd": "12-22",
           "share": 1.0,
-          "days_to_peak": 114,
+          "days_to_peak": 107,
           "publish_on": "2026-12-17"
         },
         {
           "peak_mmdd": "01-13",
           "share": 0.49,
-          "days_to_peak": 136,
+          "days_to_peak": 129,
           "publish_on": "2027-01-08"
         }
       ],
       "next": {
         "peak_mmdd": "11-11",
         "share": 0.91,
-        "days_to_peak": 73,
+        "days_to_peak": 66,
         "publish_on": "2026-11-06"
       },
-      "d_momentum": null,
+      "d_momentum": 0.0,
       "d_peak_pct": 0
     },
     {
       "group": "종부세",
       "lunar": false,
-      "recent4": 40.6,
-      "prev4": 19.3,
-      "momentum": 2.1,
-      "yoy": 3.08,
-      "peak_pct": 41,
+      "recent4": 21.5,
+      "prev4": 41.8,
+      "momentum": 0.51,
+      "yoy": 1.72,
+      "peak_pct": 22,
       "peaks": [
         {
           "peak_mmdd": "11-24",
           "share": 1.0,
-          "days_to_peak": 86,
+          "days_to_peak": 79,
           "publish_on": "2026-11-19"
         },
         {
           "peak_mmdd": "12-01",
           "share": 0.61,
-          "days_to_peak": 93,
+          "days_to_peak": 86,
           "publish_on": "2026-11-26"
         },
         {
           "peak_mmdd": "07-14",
           "share": 0.81,
-          "days_to_peak": 318,
+          "days_to_peak": 311,
           "publish_on": "2027-07-09"
         },
         {
           "peak_mmdd": "08-03",
-          "share": 0.67,
-          "days_to_peak": 338,
+          "share": 0.71,
+          "days_to_peak": 331,
           "publish_on": "2027-07-29"
         }
       ],
       "next": {
         "peak_mmdd": "11-24",
         "share": 1.0,
-        "days_to_peak": 86,
+        "days_to_peak": 79,
         "publish_on": "2026-11-19"
       },
-      "d_momentum": -1.21,
-      "d_peak_pct": -3
+      "d_momentum": -1.59,
+      "d_peak_pct": -19
     },
     {
       "group": "건강보험료율 발표",
       "lunar": false,
-      "recent4": 9.3,
-      "prev4": 15.2,
-      "momentum": 0.61,
-      "yoy": 0.74,
-      "peak_pct": 9,
+      "recent4": 7.2,
+      "prev4": 17.6,
+      "momentum": 0.41,
+      "yoy": 0.49,
+      "peak_pct": 7,
       "peaks": [
         {
           "peak_mmdd": "11-24",
           "share": 1.0,
-          "days_to_peak": 86,
+          "days_to_peak": 79,
           "publish_on": "2026-11-19"
         },
         {
           "peak_mmdd": "12-01",
           "share": 0.75,
-          "days_to_peak": 93,
+          "days_to_peak": 86,
           "publish_on": "2026-11-26"
         },
         {
           "peak_mmdd": "01-26",
           "share": 0.46,
-          "days_to_peak": 149,
+          "days_to_peak": 142,
           "publish_on": "2027-01-21"
         }
       ],
       "next": {
         "peak_mmdd": "11-24",
         "share": 1.0,
-        "days_to_peak": 86,
+        "days_to_peak": 79,
         "publish_on": "2026-11-19"
       },
-      "d_momentum": -2.34,
-      "d_peak_pct": -9
+      "d_momentum": -0.2,
+      "d_peak_pct": -2
     },
     {
       "group": "연금저축 세액공제",
       "lunar": false,
-      "recent4": 14.8,
-      "prev4": 20.8,
-      "momentum": 0.71,
-      "yoy": 0.64,
-      "peak_pct": 15,
+      "recent4": 14.2,
+      "prev4": 17.2,
+      "momentum": 0.83,
+      "yoy": 0.63,
+      "peak_pct": 14,
       "peaks": [
         {
           "peak_mmdd": "11-25",
           "share": 0.56,
-          "days_to_peak": 87,
+          "days_to_peak": 80,
           "publish_on": "2026-11-20"
         },
         {
           "peak_mmdd": "12-29",
           "share": 1.0,
-          "days_to_peak": 121,
+          "days_to_peak": 114,
           "publish_on": "2026-12-24"
         },
         {
           "peak_mmdd": "01-20",
           "share": 0.81,
-          "days_to_peak": 143,
+          "days_to_peak": 136,
           "publish_on": "2027-01-15"
         },
         {
           "peak_mmdd": "02-03",
           "share": 0.68,
-          "days_to_peak": 157,
+          "days_to_peak": 150,
           "publish_on": "2027-01-29"
         }
       ],
       "next": {
         "peak_mmdd": "11-25",
         "share": 0.56,
-        "days_to_peak": 87,
+        "days_to_peak": 80,
         "publish_on": "2026-11-20"
       },
-      "d_momentum": 0.05,
-      "d_peak_pct": 0
+      "d_momentum": 0.12,
+      "d_peak_pct": -1
     },
     {
       "group": "지역 건강보험료",
       "lunar": false,
-      "recent4": 9.6,
+      "recent4": 9.8,
       "prev4": 10.8,
-      "momentum": 0.89,
-      "yoy": 0.44,
+      "momentum": 0.91,
+      "yoy": 0.47,
       "peak_pct": 10,
       "peaks": [
         {
           "peak_mmdd": "11-25",
           "share": 0.91,
-          "days_to_peak": 87,
+          "days_to_peak": 80,
           "publish_on": "2026-11-20"
         },
         {
           "peak_mmdd": "12-02",
           "share": 0.69,
-          "days_to_peak": 94,
+          "days_to_peak": 87,
           "publish_on": "2026-11-27"
         },
         {
           "peak_mmdd": "01-20",
           "share": 0.68,
-          "days_to_peak": 143,
+          "days_to_peak": 136,
           "publish_on": "2027-01-15"
         },
         {
           "peak_mmdd": "05-18",
           "share": 1.0,
-          "days_to_peak": 261,
+          "days_to_peak": 254,
           "publish_on": "2027-05-13"
         }
       ],
       "next": {
         "peak_mmdd": "11-25",
         "share": 0.91,
-        "days_to_peak": 87,
+        "days_to_peak": 80,
         "publish_on": "2026-11-20"
       },
-      "d_momentum": -0.07,
+      "d_momentum": 0.02,
       "d_peak_pct": 0
     },
     {
       "group": "난방비",
       "lunar": false,
-      "recent4": 2.6,
+      "recent4": 2.5,
       "prev4": 2.8,
-      "momentum": 0.93,
+      "momentum": 0.89,
       "yoy": 0.25,
-      "peak_pct": 3,
+      "peak_pct": 2,
       "peaks": [
         {
           "peak_mmdd": "11-25",
           "share": 0.52,
-          "days_to_peak": 87,
+          "days_to_peak": 80,
           "publish_on": "2026-11-20"
         },
         {
           "peak_mmdd": "12-16",
           "share": 0.82,
-          "days_to_peak": 108,
+          "days_to_peak": 101,
           "publish_on": "2026-12-11"
         },
         {
           "peak_mmdd": "01-06",
           "share": 1.0,
-          "days_to_peak": 129,
+          "days_to_peak": 122,
           "publish_on": "2027-01-01"
         },
         {
           "peak_mmdd": "02-24",
           "share": 0.71,
-          "days_to_peak": 178,
+          "days_to_peak": 171,
           "publish_on": "2027-02-19"
         }
       ],
       "next": {
         "peak_mmdd": "11-25",
         "share": 0.52,
-        "days_to_peak": 87,
+        "days_to_peak": 80,
         "publish_on": "2026-11-20"
       },
-      "d_momentum": -0.03,
-      "d_peak_pct": 0
+      "d_momentum": -0.04,
+      "d_peak_pct": -1
     },
     {
       "group": "국민연금 수령",
       "lunar": false,
-      "recent4": 54.5,
-      "prev4": 49.3,
-      "momentum": 1.11,
-      "yoy": 1.0,
-      "peak_pct": 55,
+      "recent4": 58.2,
+      "prev4": 50.4,
+      "momentum": 1.15,
+      "yoy": 1.04,
+      "peak_pct": 58,
       "peaks": [
         {
           "peak_mmdd": "12-29",
           "share": 0.88,
-          "days_to_peak": 121,
+          "days_to_peak": 114,
           "publish_on": "2026-12-24"
         },
         {
           "peak_mmdd": "01-27",
           "share": 1.0,
-          "days_to_peak": 150,
+          "days_to_peak": 143,
           "publish_on": "2027-01-22"
         },
         {
           "peak_mmdd": "02-03",
           "share": 0.96,
-          "days_to_peak": 157,
+          "days_to_peak": 150,
           "publish_on": "2027-01-29"
         },
         {
           "peak_mmdd": "03-17",
           "share": 0.88,
-          "days_to_peak": 199,
+          "days_to_peak": 192,
           "publish_on": "2027-03-12"
         }
       ],
       "next": {
         "peak_mmdd": "12-29",
         "share": 0.88,
-        "days_to_peak": 121,
+        "days_to_peak": 114,
         "publish_on": "2026-12-24"
       },
-      "d_momentum": 0.06,
-      "d_peak_pct": 5
+      "d_momentum": 0.04,
+      "d_peak_pct": 3
     },
     {
       "group": "정기예금 금리",
       "lunar": false,
-      "recent4": 74.4,
-      "prev4": 86.5,
-      "momentum": 0.86,
-      "yoy": 1.35,
-      "peak_pct": 74,
+      "recent4": 76.5,
+      "prev4": 88.2,
+      "momentum": 0.87,
+      "yoy": 1.3,
+      "peak_pct": 76,
       "peaks": [
         {
           "peak_mmdd": "12-29",
           "share": 0.97,
-          "days_to_peak": 121,
+          "days_to_peak": 114,
           "publish_on": "2026-12-24"
         },
         {
           "peak_mmdd": "01-05",
           "share": 1.0,
-          "days_to_peak": 128,
+          "days_to_peak": 121,
           "publish_on": "2026-12-31"
         },
         {
           "peak_mmdd": "02-24",
           "share": 0.93,
-          "days_to_peak": 178,
+          "days_to_peak": 171,
           "publish_on": "2027-02-19"
         },
         {
           "peak_mmdd": "07-20",
           "share": 0.9,
-          "days_to_peak": 324,
+          "days_to_peak": 317,
           "publish_on": "2027-07-15"
         }
       ],
       "next": {
         "peak_mmdd": "12-29",
         "share": 0.97,
-        "days_to_peak": 121,
+        "days_to_peak": 114,
         "publish_on": "2026-12-24"
       },
-      "d_momentum": -0.02,
-      "d_peak_pct": -1
+      "d_momentum": 0.01,
+      "d_peak_pct": 2
     },
     {
       "group": "자동차세 정기분",
       "lunar": false,
-      "recent4": 4.5,
-      "prev4": 11.4,
-      "momentum": 0.39,
+      "recent4": 4.4,
+      "prev4": 8.5,
+      "momentum": 0.52,
       "yoy": 0.61,
       "peak_pct": 4,
       "peaks": [
         {
           "peak_mmdd": "12-30",
           "share": 0.78,
-          "days_to_peak": 122,
+          "days_to_peak": 115,
           "publish_on": "2026-12-25"
         },
         {
           "peak_mmdd": "01-13",
           "share": 1.0,
-          "days_to_peak": 136,
+          "days_to_peak": 129,
           "publish_on": "2027-01-08"
         },
         {
           "peak_mmdd": "06-29",
           "share": 0.65,
-          "days_to_peak": 303,
+          "days_to_peak": 296,
           "publish_on": "2027-06-24"
         }
       ],
       "next": {
         "peak_mmdd": "12-30",
         "share": 0.78,
-        "days_to_peak": 122,
+        "days_to_peak": 115,
         "publish_on": "2026-12-25"
       },
-      "d_momentum": 0.19,
-      "d_peak_pct": -2
+      "d_momentum": 0.13,
+      "d_peak_pct": 0
     },
     {
       "group": "퇴직금",
       "lunar": false,
-      "recent4": 47.2,
-      "prev4": 49.7,
-      "momentum": 0.95,
-      "yoy": 0.67,
-      "peak_pct": 47,
+      "recent4": 48.5,
+      "prev4": 48.1,
+      "momentum": 1.01,
+      "yoy": 0.68,
+      "peak_pct": 48,
       "peaks": [
         {
           "peak_mmdd": "12-30",
           "share": 0.91,
-          "days_to_peak": 122,
+          "days_to_peak": 115,
           "publish_on": "2026-12-25"
         },
         {
           "peak_mmdd": "01-06",
           "share": 1.0,
-          "days_to_peak": 129,
+          "days_to_peak": 122,
           "publish_on": "2027-01-01"
         },
         {
           "peak_mmdd": "02-10",
           "share": 0.95,
-          "days_to_peak": 164,
+          "days_to_peak": 157,
           "publish_on": "2027-02-05"
         },
         {
           "peak_mmdd": "03-10",
           "share": 0.86,
-          "days_to_peak": 192,
+          "days_to_peak": 185,
           "publish_on": "2027-03-05"
         }
       ],
       "next": {
         "peak_mmdd": "12-30",
         "share": 0.91,
-        "days_to_peak": 122,
+        "days_to_peak": 115,
         "publish_on": "2026-12-25"
       },
       "d_momentum": 0.06,
@@ -708,170 +628,170 @@
     {
       "group": "기초연금",
       "lunar": false,
-      "recent4": 28.0,
-      "prev4": 24.0,
-      "momentum": 1.17,
-      "yoy": 0.83,
-      "peak_pct": 28,
+      "recent4": 32.9,
+      "prev4": 24.7,
+      "momentum": 1.33,
+      "yoy": 1.03,
+      "peak_pct": 33,
       "peaks": [
         {
           "peak_mmdd": "12-30",
           "share": 0.82,
-          "days_to_peak": 122,
+          "days_to_peak": 115,
           "publish_on": "2026-12-25"
         },
         {
           "peak_mmdd": "01-05",
           "share": 1.0,
-          "days_to_peak": 128,
+          "days_to_peak": 121,
           "publish_on": "2026-12-31"
         },
         {
           "peak_mmdd": "02-16",
           "share": 0.77,
-          "days_to_peak": 170,
+          "days_to_peak": 163,
           "publish_on": "2027-02-11"
         },
         {
           "peak_mmdd": "08-24",
-          "share": 0.67,
-          "days_to_peak": 359,
+          "share": 0.7,
+          "days_to_peak": 352,
           "publish_on": "2027-08-19"
         }
       ],
       "next": {
         "peak_mmdd": "12-30",
         "share": 0.82,
-        "days_to_peak": 122,
+        "days_to_peak": 115,
         "publish_on": "2026-12-25"
       },
-      "d_momentum": 0.2,
-      "d_peak_pct": 6
+      "d_momentum": 0.16,
+      "d_peak_pct": 5
     },
     {
       "group": "실업급여",
       "lunar": false,
-      "recent4": 41.0,
+      "recent4": 45.5,
       "prev4": 39.7,
-      "momentum": 1.03,
-      "yoy": 0.65,
-      "peak_pct": 41,
+      "momentum": 1.15,
+      "yoy": 0.7,
+      "peak_pct": 46,
       "peaks": [
         {
           "peak_mmdd": "12-30",
           "share": 0.97,
-          "days_to_peak": 122,
+          "days_to_peak": 115,
           "publish_on": "2026-12-25"
         },
         {
           "peak_mmdd": "01-06",
           "share": 1.0,
-          "days_to_peak": 129,
+          "days_to_peak": 122,
           "publish_on": "2027-01-01"
         },
         {
           "peak_mmdd": "02-03",
           "share": 0.95,
-          "days_to_peak": 157,
+          "days_to_peak": 150,
           "publish_on": "2027-01-29"
         },
         {
           "peak_mmdd": "03-03",
           "share": 0.9,
-          "days_to_peak": 185,
+          "days_to_peak": 178,
           "publish_on": "2027-02-26"
         }
       ],
       "next": {
         "peak_mmdd": "12-30",
         "share": 0.97,
-        "days_to_peak": 122,
+        "days_to_peak": 115,
         "publish_on": "2026-12-25"
       },
-      "d_momentum": 0.07,
-      "d_peak_pct": 1
+      "d_momentum": 0.12,
+      "d_peak_pct": 5
     },
     {
       "group": "학원비·사교육",
       "lunar": false,
-      "recent4": 12.8,
-      "prev4": 11.8,
-      "momentum": 1.08,
-      "yoy": 0.49,
+      "recent4": 13.1,
+      "prev4": 12.0,
+      "momentum": 1.09,
+      "yoy": 0.48,
       "peak_pct": 13,
       "peaks": [
         {
           "peak_mmdd": "12-30",
           "share": 0.87,
-          "days_to_peak": 122,
+          "days_to_peak": 115,
           "publish_on": "2026-12-25"
         },
         {
           "peak_mmdd": "01-19",
           "share": 0.88,
-          "days_to_peak": 142,
+          "days_to_peak": 135,
           "publish_on": "2027-01-14"
         },
         {
           "peak_mmdd": "02-24",
           "share": 0.87,
-          "days_to_peak": 178,
+          "days_to_peak": 171,
           "publish_on": "2027-02-19"
         },
         {
           "peak_mmdd": "03-10",
           "share": 1.0,
-          "days_to_peak": 192,
+          "days_to_peak": 185,
           "publish_on": "2027-03-05"
         }
       ],
       "next": {
         "peak_mmdd": "12-30",
         "share": 0.87,
-        "days_to_peak": 122,
+        "days_to_peak": 115,
         "publish_on": "2026-12-25"
       },
-      "d_momentum": 0.13,
-      "d_peak_pct": 1
+      "d_momentum": 0.01,
+      "d_peak_pct": 0
     },
     {
       "group": "자녀 용돈",
       "lunar": false,
-      "recent4": 19.6,
-      "prev4": 20.2,
-      "momentum": 0.97,
-      "yoy": 0.66,
-      "peak_pct": 20,
+      "recent4": 21.2,
+      "prev4": 20.5,
+      "momentum": 1.03,
+      "yoy": 0.69,
+      "peak_pct": 21,
       "peaks": [
         {
           "peak_mmdd": "12-30",
           "share": 0.95,
-          "days_to_peak": 122,
+          "days_to_peak": 115,
           "publish_on": "2026-12-25"
         },
         {
           "peak_mmdd": "01-27",
           "share": 0.97,
-          "days_to_peak": 150,
+          "days_to_peak": 143,
           "publish_on": "2027-01-22"
         },
         {
           "peak_mmdd": "02-24",
           "share": 0.93,
-          "days_to_peak": 178,
+          "days_to_peak": 171,
           "publish_on": "2027-02-19"
         },
         {
           "peak_mmdd": "03-03",
           "share": 1.0,
-          "days_to_peak": 185,
+          "days_to_peak": 178,
           "publish_on": "2027-02-26"
         }
       ],
       "next": {
         "peak_mmdd": "12-30",
         "share": 0.95,
-        "days_to_peak": 122,
+        "days_to_peak": 115,
         "publish_on": "2026-12-25"
       },
       "d_momentum": 0.06,
@@ -889,14 +809,14 @@
         {
           "peak_mmdd": "01-13",
           "share": 1.0,
-          "days_to_peak": 136,
+          "days_to_peak": 129,
           "publish_on": "2027-01-08"
         }
       ],
       "next": {
         "peak_mmdd": "01-13",
         "share": 1.0,
-        "days_to_peak": 136,
+        "days_to_peak": 129,
         "publish_on": "2027-01-08"
       },
       "d_momentum": 0.0,
@@ -906,26 +826,69 @@
       "group": "자동차세 연납",
       "lunar": false,
       "recent4": 0.1,
-      "prev4": 0.3,
-      "momentum": 0.33,
-      "yoy": 1.0,
+      "prev4": 0.2,
+      "momentum": 0.5,
+      "yoy": 0.5,
       "peak_pct": 0,
       "peaks": [
         {
           "peak_mmdd": "01-13",
           "share": 1.0,
-          "days_to_peak": 136,
+          "days_to_peak": 129,
           "publish_on": "2027-01-08"
         }
       ],
       "next": {
         "peak_mmdd": "01-13",
         "share": 1.0,
-        "days_to_peak": 136,
+        "days_to_peak": 129,
         "publish_on": "2027-01-08"
       },
-      "d_momentum": 0.19,
+      "d_momentum": 0.17,
       "d_peak_pct": 0
+    },
+    {
+      "group": "국민연금 인상·개편",
+      "lunar": false,
+      "recent4": 5.4,
+      "prev4": 8.9,
+      "momentum": 0.61,
+      "yoy": 0.44,
+      "peak_pct": 5,
+      "peaks": [
+        {
+          "peak_mmdd": "01-26",
+          "share": 1.0,
+          "days_to_peak": 142,
+          "publish_on": "2027-01-21"
+        },
+        {
+          "peak_mmdd": "02-02",
+          "share": 0.8,
+          "days_to_peak": 149,
+          "publish_on": "2027-01-28"
+        },
+        {
+          "peak_mmdd": "03-17",
+          "share": 0.82,
+          "days_to_peak": 192,
+          "publish_on": "2027-03-12"
+        },
+        {
+          "peak_mmdd": "09-02",
+          "share": 0.56,
+          "days_to_peak": 361,
+          "publish_on": "2027-08-28"
+        }
+      ],
+      "next": {
+        "peak_mmdd": "01-26",
+        "share": 1.0,
+        "days_to_peak": 142,
+        "publish_on": "2027-01-21"
+      },
+      "d_momentum": -0.12,
+      "d_peak_pct": -1
     },
     {
       "group": "설 명절비",
@@ -939,20 +902,20 @@
         {
           "peak_mmdd": "01-27",
           "share": 1.0,
-          "days_to_peak": 150,
+          "days_to_peak": 143,
           "publish_on": "2027-01-22"
         },
         {
           "peak_mmdd": "02-16",
           "share": 0.9,
-          "days_to_peak": 170,
+          "days_to_peak": 163,
           "publish_on": "2027-02-11"
         }
       ],
       "next": {
         "peak_mmdd": "01-27",
         "share": 1.0,
-        "days_to_peak": 150,
+        "days_to_peak": 143,
         "publish_on": "2027-01-22"
       },
       "d_momentum": 0.0,
@@ -961,38 +924,75 @@
     {
       "group": "근로장려금 신청",
       "lunar": false,
-      "recent4": 7.3,
-      "prev4": 3.9,
-      "momentum": 1.87,
-      "yoy": 0.65,
-      "peak_pct": 7,
+      "recent4": 9.5,
+      "prev4": 4.6,
+      "momentum": 2.07,
+      "yoy": 0.61,
+      "peak_pct": 10,
       "peaks": [
         {
           "peak_mmdd": "03-09",
           "share": 0.85,
-          "days_to_peak": 191,
+          "days_to_peak": 184,
           "publish_on": "2027-03-04"
         },
         {
           "peak_mmdd": "04-28",
           "share": 0.7,
-          "days_to_peak": 241,
+          "days_to_peak": 234,
           "publish_on": "2027-04-23"
         },
         {
           "peak_mmdd": "05-05",
           "share": 1.0,
-          "days_to_peak": 248,
+          "days_to_peak": 241,
           "publish_on": "2027-04-30"
         }
       ],
       "next": {
         "peak_mmdd": "03-09",
         "share": 0.85,
-        "days_to_peak": 191,
+        "days_to_peak": 184,
         "publish_on": "2027-03-04"
       },
-      "d_momentum": 0.75,
+      "d_momentum": 0.2,
+      "d_peak_pct": 3
+    },
+    {
+      "group": "건강보험료 정산",
+      "lunar": false,
+      "recent4": 6.8,
+      "prev4": 5.8,
+      "momentum": 1.17,
+      "yoy": 0.2,
+      "peak_pct": 7,
+      "peaks": [
+        {
+          "peak_mmdd": "04-14",
+          "share": 1.0,
+          "days_to_peak": 220,
+          "publish_on": "2027-04-09"
+        },
+        {
+          "peak_mmdd": "05-12",
+          "share": 0.84,
+          "days_to_peak": 248,
+          "publish_on": "2027-05-07"
+        },
+        {
+          "peak_mmdd": "09-01",
+          "share": 0.5,
+          "days_to_peak": 360,
+          "publish_on": "2027-08-27"
+        }
+      ],
+      "next": {
+        "peak_mmdd": "04-14",
+        "share": 1.0,
+        "days_to_peak": 220,
+        "publish_on": "2027-04-09"
+      },
+      "d_momentum": 0.38,
       "d_peak_pct": 2
     },
     {
@@ -1007,20 +1007,20 @@
         {
           "peak_mmdd": "04-28",
           "share": 1.0,
-          "days_to_peak": 241,
+          "days_to_peak": 234,
           "publish_on": "2027-04-23"
         },
         {
           "peak_mmdd": "05-04",
           "share": 0.91,
-          "days_to_peak": 247,
+          "days_to_peak": 240,
           "publish_on": "2027-04-29"
         }
       ],
       "next": {
         "peak_mmdd": "04-28",
         "share": 1.0,
-        "days_to_peak": 241,
+        "days_to_peak": 234,
         "publish_on": "2027-04-23"
       },
       "d_momentum": null,
@@ -1029,108 +1029,114 @@
     {
       "group": "종합소득세 신고",
       "lunar": false,
-      "recent4": 0.9,
+      "recent4": 0.8,
       "prev4": 1.0,
-      "momentum": 0.9,
-      "yoy": 0.82,
+      "momentum": 0.8,
+      "yoy": 0.8,
       "peak_pct": 1,
       "peaks": [
         {
           "peak_mmdd": "05-26",
           "share": 1.0,
-          "days_to_peak": 269,
+          "days_to_peak": 262,
           "publish_on": "2027-05-21"
         }
       ],
       "next": {
         "peak_mmdd": "05-26",
         "share": 1.0,
-        "days_to_peak": 269,
+        "days_to_peak": 262,
         "publish_on": "2027-05-21"
       },
-      "d_momentum": 0.0,
+      "d_momentum": -0.1,
       "d_peak_pct": 0
     },
     {
       "group": "종합소득세 환급",
       "lunar": false,
-      "recent4": 1.9,
-      "prev4": 5.1,
-      "momentum": 0.37,
-      "yoy": 1.9,
-      "peak_pct": 2,
+      "recent4": 3.0,
+      "prev4": 3.9,
+      "momentum": 0.77,
+      "yoy": 3.75,
+      "peak_pct": 3,
       "peaks": [
         {
           "peak_mmdd": "06-16",
           "share": 1.0,
-          "days_to_peak": 290,
+          "days_to_peak": 283,
           "publish_on": "2027-06-11"
         }
       ],
       "next": {
         "peak_mmdd": "06-16",
         "share": 1.0,
-        "days_to_peak": 290,
+        "days_to_peak": 283,
         "publish_on": "2027-06-11"
       },
-      "d_momentum": 0.07,
-      "d_peak_pct": 0
+      "d_momentum": 0.4,
+      "d_peak_pct": 1
+    },
+    {
+      "group": "근로장려금 지급",
+      "lunar": false,
+      "recent4": 25.9,
+      "prev4": 18.8,
+      "momentum": 1.38,
+      "yoy": 0.51,
+      "peak_pct": 26,
+      "peaks": [
+        {
+          "peak_mmdd": "06-23",
+          "share": 0.7,
+          "days_to_peak": 290,
+          "publish_on": "2027-06-18"
+        },
+        {
+          "peak_mmdd": "08-25",
+          "share": 1.0,
+          "days_to_peak": 353,
+          "publish_on": "2027-08-20"
+        }
+      ],
+      "next": {
+        "peak_mmdd": "06-23",
+        "share": 0.7,
+        "days_to_peak": 290,
+        "publish_on": "2027-06-18"
+      },
+      "d_momentum": -0.77,
+      "d_peak_pct": 13
     },
     {
       "group": "전기요금",
       "lunar": false,
-      "recent4": 40.3,
-      "prev4": 35.9,
-      "momentum": 1.12,
-      "yoy": 0.85,
-      "peak_pct": 40,
+      "recent4": 27.4,
+      "prev4": 50.2,
+      "momentum": 0.55,
+      "yoy": 0.67,
+      "peak_pct": 27,
       "peaks": [
         {
           "peak_mmdd": "07-28",
           "share": 1.0,
-          "days_to_peak": 332,
+          "days_to_peak": 325,
           "publish_on": "2027-07-23"
         },
         {
           "peak_mmdd": "08-03",
-          "share": 0.96,
-          "days_to_peak": 338,
+          "share": 0.87,
+          "days_to_peak": 331,
           "publish_on": "2027-07-29"
         }
       ],
       "next": {
         "peak_mmdd": "07-28",
         "share": 1.0,
-        "days_to_peak": 332,
+        "days_to_peak": 325,
         "publish_on": "2027-07-23"
       },
-      "d_momentum": -1.05,
-      "d_peak_pct": -8
-    },
-    {
-      "group": "근로장려금 지급",
-      "lunar": false,
-      "recent4": 13.3,
-      "prev4": 6.2,
-      "momentum": 2.15,
-      "yoy": 0.55,
-      "peak_pct": 13,
-      "peaks": [
-        {
-          "peak_mmdd": "08-26",
-          "share": 1.0,
-          "days_to_peak": 361,
-          "publish_on": "2027-08-21"
-        }
-      ],
-      "next": {
-        "peak_mmdd": "08-26",
-        "share": 1.0,
-        "days_to_peak": 361,
-        "publish_on": "2027-08-21"
-      },
-      "d_momentum": 0.35,
-      "d_peak_pct": 3
+      "d_momentum": -0.57,
+      "d_peak_pct": -13
     }
   ],
   "failed": []
